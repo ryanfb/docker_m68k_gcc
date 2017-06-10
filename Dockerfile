@@ -10,7 +10,7 @@ ENV PREFIX /opt/m68k/$GCC_VERSION
 ENV TARGET m68k-elf
 ENV ENABLE_LANGUAGES c,c++
 
-RUN apt-get update && apt-get install -y wget unzip build-essential gcc-5 libgmp-dev libmpfr-dev libmpc-dev
+RUN apt-get update && apt-get install -y wget unzip build-essential gcc-5 libgmp-dev libmpfr-dev libmpc-dev && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /tmp/downloads && cd /tmp/downloads \
   && wget http://ftp.gnu.org/pub/gnu/binutils/$BINUTILS_VERSION.tar.bz2 \
